@@ -5,18 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090304">
   <meta name="description" content="Cursos, formações e atendimentos de Luna Cabalística.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Luna Cabalística | Cursos e formações">
+  <meta property="og:description" content="Tarot, Cabala e Hermetismo com profundidade, método e aplicação prática.">
   <title>Luna Cabalística</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "name": "Roberta Luna",
+        "jobTitle": "Psicoterapeuta, taróloga e numeróloga cabalista",
+        "description": "Mentora com mais de 10 anos de experiência em Tarot, Cabala e Hermetismo."
+      },
+      {
+        "@type": "Course",
+        "name": "Tarot Cabalístico na Prática",
+        "description": "Formação progressiva sobre os 78 arcanos do Tarot dentro da metodologia cabalística.",
+        "provider": { "@type": "Person", "name": "Roberta Luna" },
+        "inLanguage": "pt-BR"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="ambient ambient-one" aria-hidden="true"></div>
   <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="tree-background" aria-hidden="true">
+    <div class="tree-halo"></div>
+    <svg viewBox="0 0 320 540" focusable="false">
+      <g class="tree-lines">
+        <path d="M160 35 82 115h156L160 35v225M82 115v88h156v-88M82 115l78 145 78-145M82 203l78 57 78-57M82 203v132h156V203M82 335l78-75 78 75-78 76-78-76M160 260v151m0 0v94M82 335l78 170 78-170"/>
+      </g>
+      <g class="tree-nodes">
+        <circle cx="160" cy="35" r="17"/>
+        <circle cx="82" cy="115" r="17"/>
+        <circle cx="238" cy="115" r="17"/>
+        <circle cx="82" cy="203" r="17"/>
+        <circle cx="238" cy="203" r="17"/>
+        <circle cx="160" cy="260" r="19"/>
+        <circle cx="82" cy="335" r="17"/>
+        <circle cx="238" cy="335" r="17"/>
+        <circle cx="160" cy="411" r="17"/>
+        <circle cx="160" cy="505" r="17"/>
+      </g>
+    </svg>
+  </div>
+  <div class="background-sparkles" aria-hidden="true">
+    <i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
   <div class="noise" aria-hidden="true"></div>
 
-  <main class="page-shell">
+  <main class="page-shell" id="topo">
     <section class="profile" aria-labelledby="page-title">
       <div class="avatar" aria-hidden="true">
         <span>LC</span>
@@ -56,43 +102,136 @@
       <div class="link-list">
         <a class="glass-link glass-link-hero featured" href="./tarot-cabalistico/">
           <span class="link-icon">✦</span>
-          <span class="link-copy">
-            <strong>Tarot Cabalístico na Prática</strong>
-            <small>Formação completa • mais de 40h de aulas progressivas</small>
-          </span>
+          <span class="link-copy"><strong>Tarot Cabalístico na Prática</strong><small>Formação completa • mais de 40h de aulas progressivas</small></span>
           <span class="link-arrow" aria-hidden="true">↗</span>
         </a>
-
         <a class="glass-link" href="#" data-placeholder="true">
           <span class="link-icon">△</span>
-          <span class="link-copy">
-            <strong>Tarot de Thoth</strong>
-            <small>Curso prático</small>
-          </span>
+          <span class="link-copy"><strong>Tarot de Thoth</strong><small>Curso prático</small></span>
           <span class="link-arrow" aria-hidden="true">↗</span>
         </a>
-
         <a class="glass-link" href="#" data-placeholder="true">
           <span class="link-icon">✧</span>
-          <span class="link-copy">
-            <strong>Mentoria Hermeticum</strong>
-            <small>Em construção</small>
-          </span>
+          <span class="link-copy"><strong>Mentoria Hermeticum</strong><small>Em construção</small></span>
           <span class="link-arrow" aria-hidden="true">↗</span>
         </a>
-
         <a class="glass-link glass-link-gold" href="#" data-placeholder="true">
           <span class="link-icon">☷</span>
-          <span class="link-copy">
-            <strong>Manual Prático de Tarot Cabalístico</strong>
-            <small>Material digital para consulta</small>
-          </span>
+          <span class="link-copy"><strong>Manual Prático de Tarot Cabalístico</strong><small>Material digital para consulta</small></span>
           <span class="link-arrow" aria-hidden="true">↗</span>
         </a>
       </div>
     </section>
 
-    <footer>
+    <section class="metrics-strip full-bleed reveal" aria-label="Números da formação">
+      <div class="metrics-inner">
+        <div class="metric"><strong>10+</strong><span>anos de experiência</span></div>
+        <div class="metric"><strong>40h+</strong><span>de aulas gravadas</span></div>
+        <div class="metric"><strong>78</strong><span>arcanos estudados</span></div>
+        <div class="metric"><strong>15 dias</strong><span>entre novas aulas</span></div>
+      </div>
+    </section>
+
+    <section class="content-section about-section reveal" id="luna">
+      <div class="section-heading">
+        <span class="section-kicker">Sua mentora</span>
+        <h2>Conhecimento profundo, traduzido para a prática.</h2>
+      </div>
+
+      <div class="mentor-card glass-panel">
+        <div class="mentor-photo-placeholder" role="img" aria-label="Espaço reservado para a foto de Luna">
+          <span>RL</span>
+          <small>Foto da Luna</small>
+        </div>
+        <div class="mentor-copy">
+          <h3>Roberta Luna</h3>
+          <p>Psicoterapeuta, taróloga e numeróloga cabalista há mais de 10 anos.</p>
+          <p>Reuniu seu estudo de Hermetismo e a fundamentação de grandes mestres de ordens iniciáticas em um método prático, estruturado e consciente para o Tarot.</p>
+          <div class="mentor-tags">
+            <span>Hermetismo aplicado</span><span>Leitura profissional</span><span>Cabala prática</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section reveal" id="depoimentos">
+      <div class="section-heading">
+        <span class="section-kicker">Experiências reais</span>
+        <h2>O que as alunas dizem</h2>
+      </div>
+
+      <div class="testimonial-track">
+        <article class="testimonial glass-panel">
+          <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          <p>“O curso é excelente para todos os níveis. A conexão entre a Cabala e o Tarot é apresentada com riqueza e clareza.”</p>
+          <footer><strong>Jaqueline</strong><span>Aluna da formação</span></footer>
+        </article>
+        <article class="testimonial glass-panel">
+          <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          <p>“Foi um verdadeiro divisor de águas. Hoje me sinto muito mais confiante nas leituras e preparada para orientar outras pessoas.”</p>
+          <footer><strong>Michele</strong><span>Aluna da formação</span></footer>
+        </article>
+        <article class="testimonial glass-panel">
+          <div class="stars" aria-label="5 estrelas">★★★★★</div>
+          <p>“A didática é clara, acolhedora e profunda. Evoluí como taróloga e também como ser humano.”</p>
+          <footer><strong>Magda de Paula</strong><span>Aluna da formação</span></footer>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section reveal" id="formacoes">
+      <div class="section-heading">
+        <span class="section-kicker">Formações</span>
+        <h2>Escolha a profundidade do seu próximo passo</h2>
+      </div>
+
+      <div class="course-details">
+        <article class="course-detail glass-panel">
+          <span class="course-number">01</span>
+          <h3>Tarot Cabalístico na Prática</h3>
+          <p>Uma formação progressiva sobre os 78 arcanos, caminhos da Árvore da Vida, Sephiroth, métodos de tiragem, ética e prática profissional.</p>
+          <ul><li>Mais de 40 horas gravadas</li><li>Novas aulas quinzenais</li><li>Certificado de conclusão</li><li>Grupo exclusivo de alunos</li></ul>
+          <a href="./tarot-cabalistico/">Conhecer a formação <span>↗</span></a>
+        </article>
+
+        <article class="course-detail glass-panel muted-course">
+          <span class="course-number">02</span>
+          <h3>Tarot de Thoth</h3>
+          <p>Uma jornada prática dedicada à estrutura, aos símbolos e à leitura do Tarot de Thoth.</p>
+          <span class="status-pill">Página em preparação</span>
+        </article>
+
+        <article class="course-detail glass-panel muted-course">
+          <span class="course-number">03</span>
+          <h3>Mentoria Hermeticum</h3>
+          <p>Um espaço de aprofundamento e direcionamento para estudos herméticos.</p>
+          <span class="status-pill">Em construção</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section reveal" id="faq">
+      <div class="section-heading">
+        <span class="section-kicker">Dúvidas frequentes</span>
+        <h2>Antes de começar</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item glass-panel"><summary>Preciso já saber Tarot?</summary><p>Não. A formação recebe tanto iniciantes quanto pessoas que já leem Tarot e querem desenvolver mais estrutura e profundidade.</p></details>
+        <details class="faq-item glass-panel"><summary>Por quanto tempo terei acesso?</summary><p>O acesso ao material gravado é vitalício, permitindo estudar e rever as aulas no seu próprio ritmo.</p></details>
+        <details class="faq-item glass-panel"><summary>O curso abrange os 78 arcanos?</summary><p>Sim. A metodologia percorre Arcanos Maiores, Arcanos Menores, cartas da corte e suas correspondências cabalísticas.</p></details>
+        <details class="faq-item glass-panel"><summary>Existem aulas e conteúdos novos?</summary><p>Sim. A formação é progressiva e recebe uma nova aula de aprofundamento com mais de uma hora a cada quinze dias.</p></details>
+        <details class="faq-item glass-panel"><summary>Recebo certificado e suporte?</summary><p>Sim. Há certificado ao final do curso e um grupo exclusivo de alunos para interação e comunicados.</p></details>
+      </div>
+    </section>
+
+    <section class="closing-card glass-panel reveal">
+      <span class="section-kicker">Comece por onde faz sentido</span>
+      <h2>Seu estudo pode ganhar mais clareza, estrutura e direção.</h2>
+      <a href="#topo" class="closing-button">Explorar as formações</a>
+    </section>
+
+    <footer class="site-footer">
       <span class="footer-symbol">✦</span>
       <p>© <span id="year"></span> Luna Cabalística</p>
     </footer>
