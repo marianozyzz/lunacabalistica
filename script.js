@@ -32,7 +32,7 @@ if ("IntersectionObserver" in window) {
 }
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const parallaxLayers = document.querySelectorAll(".tree-background, .ambient");
+const parallaxLayers = document.querySelectorAll(".tree-background, .ambient, .section-symbol");
 let parallaxFrame = 0;
 
 function updateParallax() {
@@ -40,8 +40,9 @@ function updateParallax() {
 
   parallaxLayers.forEach((layer, index) => {
     const direction = index % 2 === 0 ? 1 : -1;
-    const speed = layer.classList.contains("tree-background") ? 0.045 : 0.025;
-    layer.style.setProperty("--parallax-y", `${scrollTop * speed * direction}px`);
+    const speed = layer.classList.contains("tree-background") ? 0.035 : layer.classList.contains("section-symbol") ? 0.022 : 0.018;
+    const property = layer.classList.contains("section-symbol") ? "--symbol-y" : "--parallax-y";
+    layer.style.setProperty(property, `${scrollTop * speed * direction}px`);
   });
 
   parallaxFrame = 0;
@@ -54,3 +55,28 @@ function requestParallax() {
 
 window.addEventListener("scroll", requestParallax, { passive: true });
 updateParallax();
+
+const dockLinks = [...document.querySelectorAll(".glass-dock a")];
+const dockTargets = dockLinks
+  .map((link) => document.querySelector(link.getAttribute("href")))
+  .filter(Boolean);
+
+function setCurrentDockLink(id) {
+  dockLinks.forEach((link) => {
+    const current = link.getAttribute("href") === `#${id}`;
+    link.classList.toggle("is-current", current);
+    if (current) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
+}
+
+if ("IntersectionObserver" in window && dockTargets.length) {
+  const navigationObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setCurrentDockLink(visible.target.id);
+  }, { rootMargin: "-25% 0px -60%", threshold: [0, 0.2, 0.5] });
+
+  dockTargets.forEach((target) => navigationObserver.observe(target));
+}
