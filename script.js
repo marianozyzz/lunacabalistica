@@ -1,19 +1,6 @@
 const year = document.querySelector("#year");
-const toast = document.querySelector(".toast");
-let toastTimer;
 
 if (year) year.textContent = new Date().getFullYear();
-
-document.querySelectorAll('[data-placeholder="true"]').forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (!toast) return;
-
-    toast.classList.add("visible");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove("visible"), 2400);
-  });
-});
 
 const revealItems = document.querySelectorAll(".reveal");
 
@@ -55,28 +42,3 @@ function requestParallax() {
 
 window.addEventListener("scroll", requestParallax, { passive: true });
 updateParallax();
-
-const dockLinks = [...document.querySelectorAll(".glass-dock a")];
-const dockTargets = dockLinks
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-
-function setCurrentDockLink(id) {
-  dockLinks.forEach((link) => {
-    const current = link.getAttribute("href") === `#${id}`;
-    link.classList.toggle("is-current", current);
-    if (current) link.setAttribute("aria-current", "location");
-    else link.removeAttribute("aria-current");
-  });
-}
-
-if ("IntersectionObserver" in window && dockTargets.length) {
-  const navigationObserver = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visible) setCurrentDockLink(visible.target.id);
-  }, { rootMargin: "-25% 0px -60%", threshold: [0, 0.2, 0.5] });
-
-  dockTargets.forEach((target) => navigationObserver.observe(target));
-}
