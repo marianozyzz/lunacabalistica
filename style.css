@@ -24,11 +24,15 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 body {
   min-height: 100vh;
-  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
   color: var(--text);
   background:
     radial-gradient(circle at 50% -10%, rgba(102, 8, 18, 0.43), transparent 38%),
@@ -213,11 +217,12 @@ a {
   pointer-events: none;
 }
 
-.welcome-line { display: flex; align-items: center; gap: 9px; margin-top: 28px; color: var(--gold-bright); font-size: .67rem; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+.welcome-line { display: flex; align-items: center; gap: 11px; margin-top: 28px; color: var(--gold-bright); font-size: .82rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
 .welcome-line span { width: 20px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
 .welcome-line span:last-child { transform: rotate(180deg); }
 .cosmic-guardian { pointer-events: none; user-select: none; }
 .cosmic-guardian-hero { position: absolute; top: 40px; right: -58px; width: 94px; height: auto; opacity: .58; filter: drop-shadow(0 0 17px rgba(227,189,119,.24)); animation: cosmicFloat 6s ease-in-out infinite; }
+.cosmic-guardian-hero-left { left: -58px; right: auto; animation-name: cosmicFloatLeft; }
 
 .brand-seal {
   position: absolute;
@@ -436,8 +441,7 @@ h1 {
 .cosmic-message::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 14% 20%, rgba(227,189,119,.12), transparent 32%); pointer-events: none; }
 .cosmic-message img { position: relative; z-index: 1; display: block; width: 100%; max-height: 160px; object-fit: contain; filter: drop-shadow(0 0 13px rgba(227,189,119,.19)); }
 .cosmic-message div { position: relative; z-index: 1; }
-.cosmic-message h2 { margin-top: 6px; font-size: 1.55rem; }
-.cosmic-message p { margin-top: 8px; color: var(--muted); font-size: .88rem; line-height: 1.6; }
+.cosmic-message h2 { margin-top: 8px; font-size: clamp(1.8rem, 3.5vw, 2.55rem); line-height: 1.16; letter-spacing: -.025em; }
 
 .full-bleed {
   width: 100vw;
@@ -863,6 +867,7 @@ h1 {
 
 @keyframes starFieldFloat { 0%,100% { transform: translateX(-50%) translateY(0); opacity: .7; } 50% { transform: translateX(-50%) translateY(-10px); opacity: 1; } }
 @keyframes cosmicFloat { 0%,100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-10px) rotate(-2deg); } }
+@keyframes cosmicFloatLeft { 0%,100% { transform: translateY(0) scaleX(-1) rotate(2deg); } 50% { transform: translateY(-10px) scaleX(-1) rotate(-2deg); } }
 
 @media (min-width: 1000px) {
   .page-shell {
@@ -898,7 +903,8 @@ h1 {
   .profile::before { top: -55px; width: 240px; height: 240px; }
   .profile::after { top: -50px; width: 310px; opacity: 1; filter: drop-shadow(0 0 13px rgba(227,189,119,.72)); }
   .cosmic-guardian-hero { top: 34px; right: -23px; width: 74px; opacity: .82; }
-  .welcome-line { margin-top: 25px; font-size: .61rem; }
+  .cosmic-guardian-hero-left { left: -23px; right: auto; }
+  .welcome-line { margin-top: 25px; font-size: .7rem; letter-spacing: .13em; gap: 8px; }
   .background-sparkles i { width: 5px; height: 5px; box-shadow: 0 0 14px 4px rgba(227,189,119,.46); }
 
   .tree-background {
@@ -1074,9 +1080,30 @@ a:focus-visible, summary:focus-visible { outline: 2px solid var(--gold-bright); 
   .header-brand img { width: 34px; height: 34px; }
   .header-brand strong { font-size: .8rem; }
   .header-cta { padding-inline: 11px; font-size: .7rem; }
-  .welcome-line { font-size: .55rem; letter-spacing: .13em; }
+  .welcome-line { font-size: .62rem; letter-spacing: .1em; gap: 6px; }
+  .cosmic-guardian-hero { right: -10px; width: 58px; }
+  .cosmic-guardian-hero-left { left: -10px; right: auto; }
   .social-row { gap: 7px; }
   .social-button { min-width: 0; padding-inline: 12px; }
   .cosmic-message { grid-template-columns: 72px 1fr; padding-right: 14px; }
   .cosmic-message h2 { font-size: 1.2rem; }
+}
+
+
+/* Mobile stability: prevent decorative layers and full-bleed sections from creating sideways drift. */
+@media (max-width: 760px) {
+  html, body { width: 100%; max-width: 100%; overflow-x: clip; }
+  .page-shell, main, section, .site-header { min-width: 0; }
+  .page-shell { width: calc(100% - 28px); max-width: 1120px; margin-inline: auto; }
+  .full-bleed, .paper-section { max-width: 100vw; }
+  .full-bleed { width: 100%; margin-left: 0; }
+  .paper-section { width: 100%; }
+  .tree-background, .ambient, .section-symbol { max-width: 100vw; }
+  img, svg, video, canvas { max-width: 100%; }
+}
+@media (max-width: 390px) {
+  .page-shell { width: calc(100% - 24px); }
+  .social-row { flex-wrap: wrap; justify-content: center; }
+  .cosmic-message { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
+  .cosmic-message h2 { font-size: clamp(1.35rem, 6vw, 1.7rem); overflow-wrap: anywhere; }
 }
