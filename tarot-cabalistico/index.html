@@ -2,18 +2,103 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tarot Cabalístico na Prática | Luna</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080607">
+  <meta name="description" content="Conheça o Tarot Cabalístico na Prática com Roberta Luna: um caminho de estudo dos arcanos e dos símbolos da Cabala Hermética.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tarot Cabalístico na Prática | Luna Cabalística">
+  <meta property="og:description" content="Estude o Tarot com estrutura, simbolismo e método ao lado de Roberta Luna.">
+  <link rel="canonical" href="https://lunacabalistica.com.br/tarot-cabalistico/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <title>Tarot Cabalístico na Prática | Luna Cabalística</title>
   <style>
-    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;color:#fff;background:#07060b;font:16px/1.6 system-ui,sans-serif;text-align:center}.box{width:min(100%,560px);padding:42px 28px;border:1px solid #ffffff22;border-radius:28px;background:#ffffff0d;box-shadow:0 30px 80px #0008}.symbol{color:#e8c78e;font-size:28px}h1{margin:12px 0;font-family:Georgia,serif;font-size:clamp(2rem,7vw,3.5rem);line-height:1.05}p{color:#bdb6c7}a{display:inline-block;margin-top:18px;padding:13px 20px;border:1px solid #ffffff26;border-radius:999px;color:#fff;text-decoration:none;background:#ffffff12}
+    .course-page { width:min(100% - 40px, 1120px); margin:0 auto; padding:28px 0 70px; }
+    .course-nav { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:8px 0 30px; }
+    .course-nav .header-brand { display:flex; }
+    .back-link { color:var(--muted); font-size:.85rem; }
+    .course-hero { position:relative; display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(28px,5vw,72px); align-items:center; min-height:570px; padding:clamp(28px,5vw,70px); overflow:hidden; border:1px solid rgba(226,196,139,.22); border-radius:30px; background:radial-gradient(ellipse at 80% 20%,rgba(111,24,43,.4),transparent 45%),linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.012)); box-shadow:0 35px 100px rgba(0,0,0,.25); }
+    .course-hero::before { content:""; position:absolute; width:420px; aspect-ratio:1; right:-80px; top:-90px; border:1px solid rgba(224,190,124,.14); border-radius:50%; box-shadow:0 0 0 28px rgba(224,190,124,.025),0 0 0 70px rgba(224,190,124,.018); pointer-events:none; }
+    .course-hero-copy,.course-art { position:relative; z-index:1; }
+    .course-hero h1 { max-width:680px; margin:18px 0; font-size:clamp(2.8rem,6vw,5.5rem); }
+    .course-hero p { max-width:590px; color:var(--muted); line-height:1.8; font-size:1.05rem; }
+    .course-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .primary-action,.secondary-action { display:inline-flex; justify-content:center; align-items:center; min-height:50px; padding:0 22px; border-radius:999px; font-weight:700; font-size:.87rem; transition:transform .2s ease,filter .2s ease; }
+    .primary-action { color:#1a0c0c; background:linear-gradient(135deg,#f0d9a9,#c69a58); }
+    .secondary-action { border:1px solid rgba(226,196,139,.26); background:rgba(255,255,255,.035); }
+    .primary-action:hover,.secondary-action:hover { transform:translateY(-2px); filter:brightness(1.08); }
+    .course-art { display:grid; place-items:center; min-height:350px; }
+    .course-art .orbit { position:absolute; width:min(100%,390px); aspect-ratio:1; border:1px solid rgba(226,196,139,.22); border-radius:50%; box-shadow:0 0 70px rgba(102,21,34,.18),inset 0 0 55px rgba(102,21,34,.12); }
+    .course-art .orbit::before,.course-art .orbit::after { content:""; position:absolute; inset:12%; border:1px solid rgba(226,196,139,.16); border-radius:50%; transform:rotate(60deg) scaleX(.58); }
+    .course-art .orbit::after { transform:rotate(-60deg) scaleX(.58); }
+    .course-art img { width:min(86%,330px); height:auto; filter:drop-shadow(0 0 35px rgba(226,196,139,.18)); }
+    .course-qualities { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px; }
+    .quality { padding:22px; border:1px solid rgba(226,196,139,.13); border-radius:18px; background:rgba(255,255,255,.025); }
+    .quality strong { display:block; color:var(--gold-bright); font:1.15rem Marcellus,serif; }
+    .quality span { display:block; margin-top:7px; color:var(--muted); font-size:.82rem; line-height:1.55; }
+    .course-section { padding-top:100px; }
+    .course-section .section-heading { max-width:760px; margin:0 auto 30px; }
+    .course-section .section-heading p { margin-top:14px; color:var(--muted); line-height:1.75; }
+    .learning-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; }
+    .learning-item { display:flex; gap:16px; padding:24px; border:1px solid rgba(255,255,255,.1); border-radius:20px; background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(255,255,255,.018)); }
+    .learning-item .num { color:var(--gold-bright); font:1.35rem Marcellus,serif; }
+    .learning-item h3 { font:1.18rem Marcellus,serif; }
+    .learning-item p { margin-top:8px; color:var(--muted); font-size:.88rem; line-height:1.7; }
+    .teacher-panel { display:grid; grid-template-columns:240px 1fr; gap:30px; align-items:center; padding:28px; border:1px solid rgba(226,196,139,.17); border-radius:26px; background:rgba(255,255,255,.035); }
+    .teacher-panel img { width:100%; max-height:340px; object-fit:cover; object-position:center 25%; border-radius:18px; }
+    .teacher-panel h3 { font:2rem Marcellus,serif; }
+    .teacher-panel p { margin-top:12px; color:var(--muted); line-height:1.8; }
+    .course-final { margin-top:100px; padding:clamp(30px,6vw,64px); text-align:center; border:1px solid rgba(226,196,139,.24); border-radius:28px; background:radial-gradient(ellipse at 50% 0,rgba(102,21,34,.36),transparent 65%),rgba(255,255,255,.025); }
+    .course-final h2 { max-width:720px; margin:12px auto; font-size:clamp(2rem,4vw,3rem); }
+    .course-final p { max-width:650px; margin:0 auto; color:var(--muted); line-height:1.75; }
+    .course-foot { padding-top:32px; text-align:center; color:#8e8798; font-size:.8rem; }
+    @media(max-width:760px) { .course-page{width:min(100% - 24px,560px);padding-top:16px}.course-hero{grid-template-columns:1fr;padding:30px 23px;min-height:0}.course-hero h1{font-size:clamp(2.8rem,12vw,4rem)}.course-art{min-height:230px;grid-row:1}.course-art .orbit{width:230px}.course-art img{width:190px}.course-qualities{grid-template-columns:1fr}.learning-grid{grid-template-columns:1fr}.teacher-panel{grid-template-columns:1fr}.teacher-panel img{max-width:260px;max-height:300px}.course-section{padding-top:75px}.course-final{margin-top:75px}.course-nav{padding-bottom:18px} }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
-  <main class="box">
-    <div class="symbol">✦</div>
-    <h1>Tarot Cabalístico na Prática</h1>
-    <p>A landing page completa será integrada aqui na próxima etapa.</p>
-    <a href="../">Voltar para a página inicial</a>
+  <main class="course-page">
+    <header class="course-nav">
+      <a class="header-brand" href="../" aria-label="Luna Cabalística — página inicial"><img src="../assets/brand/arvore-da-vida.webp" alt="" width="420" height="420"><span><strong>Luna Cabalística</strong><small>Consciência • Método • Símbolo</small></span></a>
+      <a class="back-link" href="../">← Página inicial</a>
+    </header>
+
+    <section class="course-hero" aria-labelledby="course-title">
+      <div class="course-hero-copy">
+        <span class="section-kicker">Formação • Tarot • Cabala Hermética</span>
+        <h1 id="course-title">Tarot Cabalístico <em>na Prática</em></h1>
+        <p>Estude os arcanos para além dos significados isolados. Explore a estrutura simbólica do Tarot por meio das correspondências da Cabala Hermética, com método, contexto e profundidade.</p>
+        <div class="course-actions"><a class="primary-action" href="https://wa.me/message/3XYHMSYQ3ESUO1" target="_blank" rel="noopener noreferrer">Quero saber sobre a formação ↗</a><a class="secondary-action" href="#conteudo">Conhecer o conteúdo</a></div>
+      </div>
+      <div class="course-art" aria-hidden="true"><span class="orbit"></span><img src="../assets/brand/arvore-da-vida.webp" alt=""></div>
+    </section>
+
+    <section class="course-qualities" aria-label="Características da formação">
+      <div class="quality"><strong>78 arcanos</strong><span>Estudo da estrutura e do simbolismo dos arcanos do Tarot.</span></div>
+      <div class="quality"><strong>Estudo progressivo</strong><span>Uma proposta de aprendizado organizada para aprofundar a compreensão.</span></div>
+      <div class="quality"><strong>Cabala Hermética</strong><span>Correspondências simbólicas aplicadas ao estudo e à leitura do Tarot.</span></div>
+    </section>
+
+    <section class="course-section" id="conteudo">
+      <div class="section-heading"><span class="section-kicker">O caminho de estudo</span><h2>Conhecimento que ganha estrutura</h2><p>Uma formação para quem deseja estudar o Tarot com mais contexto, compreender relações simbólicas e desenvolver uma prática consciente.</p></div>
+      <div class="learning-grid">
+        <article class="learning-item"><span class="num">01</span><div><h3>Os arcanos e seus símbolos</h3><p>Investigue imagens, temas e camadas simbólicas para construir uma leitura que vá além da memorização.</p></div></article>
+        <article class="learning-item"><span class="num">02</span><div><h3>Árvore da Vida e correspondências</h3><p>Conheça a estrutura cabalística usada como mapa para organizar relações e significados.</p></div></article>
+        <article class="learning-item"><span class="num">03</span><div><h3>Métodos de interpretação</h3><p>Relacione os símbolos com a pergunta e o contexto, evitando interpretações automáticas ou descoladas da situação.</p></div></article>
+        <article class="learning-item"><span class="num">04</span><div><h3>Ética e prática consciente</h3><p>Valorize a escuta, a clareza e a responsabilidade ao conduzir leituras para outras pessoas.</p></div></article>
+      </div>
+    </section>
+
+    <section class="course-section">
+      <div class="section-heading"><span class="section-kicker">Quem conduz a formação</span><h2>Roberta Luna</h2></div>
+      <div class="teacher-panel"><img src="../assets/roberta-luna.webp" alt="Roberta Luna, professora e taróloga" width="853" height="1280" loading="lazy"><div><h3>Profundidade sem perder a clareza.</h3><p>Roberta Luna trabalha com Tarot, numerologia cabalística e estudos herméticos. Sua proposta de ensino aproxima o simbolismo de uma estrutura de estudo clara, para que cada pessoa possa desenvolver compreensão e prática com responsabilidade.</p><p>Quer conhecer os detalhes atuais da formação, o acesso às aulas e as condições de inscrição? Entre em contato para receber as informações atualizadas.</p><div class="course-actions"><a class="primary-action" href="https://wa.me/message/3XYHMSYQ3ESUO1" target="_blank" rel="noopener noreferrer">Falar com a equipe ↗</a></div></div></div>
+    </section>
+
+    <section class="course-final"><span class="section-kicker">Seu próximo passo</span><h2>Estude os símbolos com mais contexto e intenção.</h2><p>Consulte os detalhes da formação, tire suas dúvidas e descubra se este caminho de estudo combina com o seu momento.</p><div class="course-actions" style="justify-content:center"><a class="primary-action" href="https://wa.me/message/3XYHMSYQ3ESUO1" target="_blank" rel="noopener noreferrer">Consultar a formação ↗</a><a class="secondary-action" href="../">Voltar ao portal</a></div></section>
+    <footer class="course-foot">© <span id="year"></span> Luna Cabalística</footer>
   </main>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
